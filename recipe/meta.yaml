@@ -1,6 +1,6 @@
 {% set name = "bgen" %}
-{% set version = "0.1.14" %}
-{% set sha256 = "311d1733ef15de633ddcb52605a0f5b6999c8c2e07afc8c67348ae026431c36e" %}
+{% set version = "0.1.15" %}
+{% set sha256 = "aa116f37b1b6f3715d951971f0bc0483ab064d93616ffe21ded336703788a6df" %}
 
 package:
   name: {{ name|lower }}
@@ -12,8 +12,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 3
-  skip: True  # [win32 or linux32 or (win64 and py27) or (win64 and py35)]
+  number: 0
+  skip: True  # [win32 or linux32 or (win64 and py35)]
   features:
     - vc9   # [win and py27]
     - vc10  # [win and py34]
