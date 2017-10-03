@@ -10,7 +10,7 @@ if errorlevel 1 exit 1
 nmake
 if errorlevel 1 exit 1
 
-nmake test
+ctest
 if errorlevel 1 exit 1
 
 nmake install
