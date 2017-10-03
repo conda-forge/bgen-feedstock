@@ -2,6 +2,9 @@ set LIB=%LIBRARY_LIB%;.\lib;%LIB%
 set LIBPATH=%LIBRARY_LIB%;.\lib;%LIBPATH%
 set INCLUDE=%LIBRARY_INC%;%INCLUDE%
 
+copy %PREFIX%\Lib\zlib.dll %LIBRARY_BIN%
+copy %PREFIX%\Lib\libzstd.lib %LIBRARY_BIN%
+
 mkdir build
 cd build
 
