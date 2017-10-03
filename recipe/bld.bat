@@ -12,6 +12,9 @@ copy %LIBRARY_LIB%\zdll.lib .
 copy %LIBRARY_LIB%\zlib.lib .
 copy %LIBRARY_LIB%\libzstd.lib .
 
+dir %LIBRARY_BIN%
+copy %LIBRARY_BIN%\zlib.dll .
+
 mkdir build
 cd build
 
