@@ -17,6 +17,7 @@ mkdir build
 cd build
 
 copy %LIBRARY_BIN%\zlib.dll .
+copy %LIBRARY_BIN%\zlib.dll z.dll
 copy %LIBRARY_BIN%\libzstd.dll .
 
 cmake -G "NMake Makefiles" ^
