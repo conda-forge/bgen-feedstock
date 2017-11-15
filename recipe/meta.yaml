@@ -25,7 +25,7 @@ requirements:
     - python  # [win]
     - toolchain
     - cmake
-    - zstd
+    - zstd  >=1.2.0
     - zlib   # [win]
     - vc 9   # [win and py27]
     - vc 10  # [win and py34]
@@ -60,4 +60,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - horta
+    - Horta
