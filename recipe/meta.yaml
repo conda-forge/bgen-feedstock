@@ -1,6 +1,6 @@
 {% set name = "bgen" %}
-{% set version = "1.0.0" %}
-{% set sha256 = "a1f5798a89133e54fd8507090e94c8e750230762c3130d685b29351c563d5bf1" %}
+{% set version = "1.0.1" %}
+{% set sha256 = "032d8baff9a8e015b356b3ca59aaf5c31271ee9b4df6d4b2e4127b811454fd3d" %}
 
 package:
   name: {{ name|lower }}
@@ -40,23 +40,25 @@ requirements:
 
 test:
   commands:
-    - test -e $PREFIX/lib/libbgen.so  # [linux]
-    - test -e $PREFIX/lib/libbgen.dylib  # [osx]
-    - test -e $PREFIX/lib/libbgen_static.a  # [unix]
-    - if NOT exist %PREFIX%/lib/bgen.lib exit 1  # [win]
-    - if NOT exist %PREFIX%/lib/bgen.dll exit 1  # [win]
+    - test -e $PREFIX/lib/libbgen.so                    # [linux]
+    - test -e $PREFIX/lib/libbgen_static.a              # [unix]
+    - test -e $PREFIX/include/bgen.h                    # [unix]
+    - test -e $PREFIX/lib/libbgen.dylib                 # [osx]
+    - if NOT exist %PREFIX%/lib/bgen.lib exit 1         # [win]
+    - if NOT exist %PREFIX%/lib/bgen.dll exit 1         # [win]
     - if NOT exist %PREFIX%/lib/bgen_static.lib exit 1  # [win]
+    - if NOT exist %PREFIX%/include/bgen.h exit 1       # [win]
 
 
 about:
   home: https://github.com/limix/bgen
   license: MIT
   license_family: MIT
-  license_file: LICENSE.txt
+  license_file: LICENSE.md
   summary: 'A BGEN file format reader'
   doc_url: https://bgen.readthedocs.io
   dev_url: https://github.com/limix/bgen
 
 extra:
   recipe-maintainers:
-    - Horta
+    - horta
