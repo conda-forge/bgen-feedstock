@@ -1,6 +1,6 @@
 {% set name = "bgen" %}
-{% set version = "0.1.19" %}
-{% set sha256 = "e7950837b7492614a2f8325adb42fb29090c02a4e38aebc7e80f5de8e8c68f23" %}
+{% set version = "1.0.0" %}
+{% set sha256 = "a1f5798a89133e54fd8507090e94c8e750230762c3130d685b29351c563d5bf1" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,6 @@ source:
 
 build:
   number: 0
-  skip: True  # [win and py27]
   features:
     - vc9   # [win and py27]
     - vc10  # [win and py34]
@@ -41,12 +40,14 @@ requirements:
 
 test:
   commands:
-    - test -e $PREFIX/lib/libbgen.so  # [linux]
-    - test -e $PREFIX/lib/libbgen.dylib  # [osx]
-    - test -e $PREFIX/lib/libbgen_static.a  # [unix]
-    - if NOT exist %PREFIX%/lib/bgen.lib exit 1  # [win]
-    - if NOT exist %PREFIX%/lib/bgen.dll exit 1  # [win]
+    - test -e $PREFIX/lib/libbgen.so                    # [linux]
+    - test -e $PREFIX/lib/libbgen_static.a              # [unix]
+    - test -e $PREFIX/include/bgen/bgen.h               # [unix]
+    - test -e $PREFIX/lib/libbgen.dylib                 # [osx]
+    - if NOT exist %PREFIX%/lib/bgen.lib exit 1         # [win]
+    - if NOT exist %PREFIX%/lib/bgen.dll exit 1         # [win]
     - if NOT exist %PREFIX%/lib/bgen_static.lib exit 1  # [win]
+    - if NOT exist %PREFIX%/include/bgen/bgen.h exit 1  # [win]
 
 
 about:
@@ -60,4 +61,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - Horta
+    - horta
