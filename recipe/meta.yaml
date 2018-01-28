@@ -45,7 +45,7 @@ test:
     - test -e $PREFIX/include/bgen.h                    # [unix]
     - test -e $PREFIX/lib/libbgen.dylib                 # [osx]
     - if NOT exist %PREFIX%/lib/bgen.lib exit 1         # [win]
-    - if NOT exist %PREFIX%/lib/bgen.dll exit 1         # [win]
+    - if NOT exist %PREFIX%/bin/bgen.dll exit 1         # [win]
     - if NOT exist %PREFIX%/lib/bgen_static.lib exit 1  # [win]
     - if NOT exist %PREFIX%/include/bgen.h exit 1       # [win]
 
