@@ -42,12 +42,12 @@ test:
   commands:
     - test -e $PREFIX/lib/libbgen.so                    # [linux]
     - test -e $PREFIX/lib/libbgen_static.a              # [unix]
-    - test -e $PREFIX/include/bgen/bgen.h               # [unix]
+    - test -e $PREFIX/include/bgen.h                    # [unix]
     - test -e $PREFIX/lib/libbgen.dylib                 # [osx]
     - if NOT exist %PREFIX%/lib/bgen.lib exit 1         # [win]
     - if NOT exist %PREFIX%/lib/bgen.dll exit 1         # [win]
     - if NOT exist %PREFIX%/lib/bgen_static.lib exit 1  # [win]
-    - if NOT exist %PREFIX%/include/bgen/bgen.h exit 1  # [win]
+    - if NOT exist %PREFIX%/include/bgen.h exit 1       # [win]
 
 
 about:
