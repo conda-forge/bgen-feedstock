@@ -27,7 +27,7 @@ requirements:
     - cmake
     - zstd
     - zlib   # [win]
-    - almosthere
+    - almosthere >=0.0.7
     - vc 9   # [win and py27]
     - vc 10  # [win and py34]
     - vc 14  # [win and py35]
@@ -35,7 +35,7 @@ requirements:
   run:
     - zstd
     - zlib   # [win]
-    - almosthere
+    - almosthere >=0.0.7
     - vc 9   # [win and py27]
     - vc 10  # [win and py34]
     - vc 14  # [win and py35]
