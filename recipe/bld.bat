@@ -13,24 +13,26 @@ copy %LIBRARY_LIB%\zdll.lib %LIBRARY_BIN%
 copy %LIBRARY_LIB%\zlib.lib %LIBRARY_BIN%
 copy %LIBRARY_LIB%\libzstd.lib %LIBRARY_BIN%
 
-mkdir build
-cd build
+pushd . && mkdir build && cd build
+if errorlevel 1 exit 1
 
 copy %LIBRARY_BIN%\zlib.dll .
 copy %LIBRARY_BIN%\zlib.dll z.dll
 copy %LIBRARY_BIN%\libzstd.dll .
 
-cmake -G "NMake Makefiles" ^
-         -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE ^
-         -DCMAKE_INSTALL_PREFIX:PATH=%PREFIX% ^
-         %SRC_DIR%
+cmake -G "%CMAKE_GENERATOR%" ^
+    -D CMAKE_BUILD_TYPE=Release ^
+    -D CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE ^
+    -D CMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
+    -D CMAKE_INSTALL_PREFIX:PATH=%LIBRARY_PREFIX% ^
+    %SRC_DIR%
 if errorlevel 1 exit 1
 
-nmake
+cmake --build . --config Release --target install
 if errorlevel 1 exit 1
 
-ctest
+ctest -V --output-on-failure -C Release
 if errorlevel 1 exit 1
 
-nmake install
+popd && rd /q /s build
 if errorlevel 1 exit 1

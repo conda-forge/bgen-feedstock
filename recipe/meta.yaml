@@ -1,6 +1,6 @@
 {% set name = "bgen" %}
-{% set version = "1.1.1" %}
-{% set sha256 = "69246751eafd0b6069c05a5889da34c37e8522d64b5f351fec710575e51db989" %}
+{% set version = "1.1.4" %}
+{% set sha256 = "dea9a48bae0c3de9dc0cbb4af22169b9d72adf7818f9808c406edd5f8aee9ac5" %}
 
 package:
   name: {{ name|lower }}
@@ -47,10 +47,12 @@ test:
     - test -e $PREFIX/lib/libbgen_static.a              # [unix]
     - test -e $PREFIX/include/bgen.h                    # [unix]
     - test -e $PREFIX/lib/libbgen.dylib                 # [osx]
-    - if NOT exist %PREFIX%/lib/bgen.lib exit 1         # [win]
-    - if NOT exist %PREFIX%/bin/bgen.dll exit 1         # [win]
-    - if NOT exist %PREFIX%/lib/bgen_static.lib exit 1  # [win]
-    - if NOT exist %PREFIX%/include/bgen.h exit 1       # [win]
+    - conda inspect linkages -p $PREFIX $PKG_NAME       # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME        # [osx]
+    - if NOT exist %LIBRARY_PREFIX%/lib/bgen.lib exit 1         # [win]
+    - if NOT exist %LIBRARY_PREFIX%/bin/bgen.dll exit 1         # [win]
+    - if NOT exist %LIBRARY_PREFIX%/lib/bgen_static.lib exit 1  # [win]
+    - if NOT exist %LIBRARY_PREFIX%/include/bgen.h exit 1       # [win]
 
 
 about:
