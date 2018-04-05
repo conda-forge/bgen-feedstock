@@ -1,6 +1,6 @@
 {% set name = "bgen" %}
-{% set version = "1.1.1" %}
-{% set sha256 = "69246751eafd0b6069c05a5889da34c37e8522d64b5f351fec710575e51db989" %}
+{% set version = "1.1.3" %}
+{% set sha256 = "914edea5de4bbd34a86a6bbff947bf327d1faee084d8ee7a43fdeb2c5dcc87e9" %}
 
 package:
   name: {{ name|lower }}
