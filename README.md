@@ -14,14 +14,16 @@ Summary: A BGEN file format reader
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/bgen-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/bgen-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/bgen-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/bgen-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/bgen-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/bgen-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/bgen-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/bgen-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/bgen-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/bgen-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/bgen-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/bgen-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/bgen/badges/version.svg)](https://anaconda.org/conda-forge/bgen)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/bgen/badges/downloads.svg)](https://anaconda.org/conda-forge/bgen)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-bgen-green.svg)](https://anaconda.org/conda-forge/bgen) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/bgen.svg)](https://anaconda.org/conda-forge/bgen) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/bgen.svg)](https://anaconda.org/conda-forge/bgen) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/bgen.svg)](https://anaconda.org/conda-forge/bgen) |
 
 Installing bgen
 ===============
