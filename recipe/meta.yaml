@@ -20,6 +20,8 @@ requirements:
     - cmake
     - {{ compiler('c') }}
   host:
+    - {{ compiler('c') }}
+  host:
     - zstd
     - zlib   # [win]
     - almosthere >=0.0.7
