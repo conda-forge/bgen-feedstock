@@ -1,6 +1,6 @@
 {% set name = "bgen" %}
-{% set version = "2.0.2" %}
-{% set sha256 = "209057a3f65d736db0a3b69b197c79a406170f13a5017599d83f0452874ad40d" %}
+{% set version = "2.0.3" %}
+{% set sha256 = "ccc34898853552ae76498b0d97bcda8dc38b4d3904f263b6576000e5c70d5a3e" %}
 
 package:
   name: {{ name|lower }}
@@ -13,46 +13,34 @@ source:
 
 build:
   number: 0
-  skip: true  # [win and py27]
-  features:
-    - vc9   # [win and py27]
-    - vc10  # [win and py34]
-    - vc14  # [win and py35]
-    - vc14  # [win and py36]
+  skip: true  # [win and vc<14]
 
 requirements:
   build:
-    - python  # [win]
-    - toolchain
+    - {{ compiler('c') }}
     - cmake
+  host:
+    - almosthere >=1.0.0
+    - conda-build
+    - zlib  # [win]
     - zstd
-    - zlib   # [win]
-    - almosthere >=0.0.7
-    - vc 9   # [win and py27]
-    - vc 10  # [win and py34]
-    - vc 14  # [win and py35]
-    - vc 14  # [win and py36]
   run:
+    - almosthere >=1.0.0
+    - zlib  # [win]
     - zstd
-    - zlib   # [win]
-    - almosthere >=0.0.7
-    - vc 9   # [win and py27]
-    - vc 10  # [win and py34]
-    - vc 14  # [win and py35]
-    - vc 14  # [win and py36]
 
 test:
   commands:
-    - test -e $PREFIX/lib/libbgen.so                    # [linux]
-    - test -e $PREFIX/lib/libbgen_static.a              # [unix]
-    - test -e $PREFIX/include/bgen.h                    # [unix]
-    - test -e $PREFIX/lib/libbgen.dylib                 # [osx]
-    - conda inspect linkages -p $PREFIX $PKG_NAME       # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME        # [osx]
-    - if NOT exist %LIBRARY_PREFIX%/lib/bgen.lib exit 1         # [win]
-    - if NOT exist %LIBRARY_PREFIX%/bin/bgen.dll exit 1         # [win]
-    - if NOT exist %LIBRARY_PREFIX%/lib/bgen_static.lib exit 1  # [win]
-    - if NOT exist %LIBRARY_PREFIX%/include/bgen.h exit 1       # [win]
+    - test -e $PREFIX/lib/libbgen.so                     # [linux]
+    - test -e $PREFIX/lib/libbgen_static.a               # [unix]
+    - test -e $PREFIX/include/bgen.h                     # [unix]
+    - test -e $PREFIX/lib/libbgen.dylib                  # [osx]
+    - conda inspect linkages -p $PREFIX $PKG_NAME        # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME         # [osx]
+    - if NOT exist %LIBRARY_LIB%/bgen.lib exit 1         # [win]
+    - if NOT exist %LIBRARY_BIN%/bgen.dll exit 1         # [win]
+    - if NOT exist %LIBRARY_LIB%/bgen_static.lib exit 1  # [win]
+    - if NOT exist %LIBRARY_INC%/bgen.h exit 1           # [win]
 
 
 about:
