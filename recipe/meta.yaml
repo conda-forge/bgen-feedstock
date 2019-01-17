@@ -1,6 +1,6 @@
 {% set name = "bgen" %}
-{% set version = "2.1.0" %}
-{% set sha256 = "391be3c3439050a9833510cffe506c7634d5337c236aaa405494e3d157e9ab8b" %}
+{% set version = "3.0.2" %}
+{% set sha256 = "e4237bc51641bf4d01da308b8efe11bfa2466df9935a53ced1e0efd86ca5d8f7" %}
 
 package:
   name: {{ name|lower }}
@@ -20,12 +20,12 @@ requirements:
     - {{ compiler('c') }}
     - cmake
   host:
-    - almosthere >=1.0.0
+    - almosthere >=1.0.1
     - conda-build
     - zlib  # [win]
     - zstd
   run:
-    - almosthere >=1.0.0
+    - almosthere >=1.0.1
     - zlib  # [win]
     - zstd
 
@@ -40,7 +40,7 @@ test:
     - if NOT exist %LIBRARY_LIB%/bgen.lib exit 1         # [win]
     - if NOT exist %LIBRARY_BIN%/bgen.dll exit 1         # [win]
     - if NOT exist %LIBRARY_LIB%/bgen_static.lib exit 1  # [win]
-    - if NOT exist %LIBRARY_INC%/bgen.h exit 1           # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/bgen.h exit 1      # [win]
 
 
 about:
