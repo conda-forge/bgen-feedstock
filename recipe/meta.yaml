@@ -40,8 +40,14 @@ test:
     - if NOT exist %LIBRARY_LIB%/bgen.lib exit 1         # [win]
     - if NOT exist %LIBRARY_BIN%/bgen.dll exit 1         # [win]
     - if NOT exist %LIBRARY_LIB%/bgen_static.lib exit 1  # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/bgen.h exit 1      # [win]
-
+    - if NOT exist %LIBRARY_INC%/bgen.h exit 1           # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/file.h exit 1      # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/depr.h exit 1      # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/str.h exit 1       # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/geno.h exit 1      # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/platform.h exit 1  # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/meta.h exit 1      # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/api.h exit 1       # [win]
 
 about:
   home: https://github.com/limix/bgen
