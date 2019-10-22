@@ -19,6 +19,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - cmake
+    - ninja  # [win]
   host:
     - almosthere >=1.0.3
     - conda-build
