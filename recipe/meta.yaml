@@ -20,12 +20,12 @@ requirements:
     - {{ compiler('c') }}
     - cmake
   host:
-    - almosthere >=1.0.0
+    - almosthere >=1.0.3
     - conda-build
     - zlib  # [win]
     - zstd
   run:
-    - almosthere >=1.0.0
+    - almosthere >=1.0.3
     - zlib  # [win]
     - zstd
 
@@ -41,6 +41,13 @@ test:
     - if NOT exist %LIBRARY_BIN%/bgen.dll exit 1         # [win]
     - if NOT exist %LIBRARY_LIB%/bgen_static.lib exit 1  # [win]
     - if NOT exist %LIBRARY_INC%/bgen.h exit 1           # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/file.h exit 1      # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/depr.h exit 1      # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/str.h exit 1       # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/geno.h exit 1      # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/platform.h exit 1  # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/meta.h exit 1      # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/api.h exit 1       # [win]
 
 
 about:
