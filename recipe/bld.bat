@@ -20,10 +20,10 @@ copy %LIBRARY_BIN%\zlib.dll .
 copy %LIBRARY_BIN%\zlib.dll z.dll
 copy %LIBRARY_BIN%\libzstd.dll .
 
-cmake -G "%CMAKE_GENERATOR%" ^
-    -D CMAKE_BUILD_TYPE=Release ^
-    -D CMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
-    -D CMAKE_INSTALL_PREFIX:PATH=%LIBRARY_PREFIX% ^
+cmake -GNinja ^
+    -DCMAKE_BUILD_TYPE=Release ^
+    -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
+    -DCMAKE_INSTALL_PREFIX:PATH=%LIBRARY_PREFIX% ^
     %SRC_DIR%
 if errorlevel 1 exit 1
 
