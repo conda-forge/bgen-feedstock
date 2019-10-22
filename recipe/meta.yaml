@@ -1,6 +1,6 @@
 {% set name = "bgen" %}
-{% set version = "2.1.0" %}
-{% set sha256 = "391be3c3439050a9833510cffe506c7634d5337c236aaa405494e3d157e9ab8b" %}
+{% set version = "3.0.3" %}
+{% set sha256 = "1cf434f35aaee86d1093f1fd96caf07fa92c3b49a760175052af934d74e702a6" %}
 
 package:
   name: {{ name|lower }}
@@ -48,7 +48,6 @@ test:
     - if NOT exist %LIBRARY_INC%/bgen/platform.h exit 1  # [win]
     - if NOT exist %LIBRARY_INC%/bgen/meta.h exit 1      # [win]
     - if NOT exist %LIBRARY_INC%/bgen/api.h exit 1       # [win]
-
 
 about:
   home: https://github.com/limix/bgen
