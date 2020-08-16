@@ -1,22 +1,17 @@
 c_compiler:
-- vs2015
+- vs2017
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 pin_run_as_build:
-  vc:
-    max_pin: x
   zlib:
     max_pin: x.x
-  zstd:
-    max_pin: x.x.x
+target_platform:
+- win-64
 vc:
 - '14'
-zip_keys:
-- - vc
-  - c_compiler
 zlib:
 - '1.2'
 zstd:
-- 1.4.4
+- '1.4'
