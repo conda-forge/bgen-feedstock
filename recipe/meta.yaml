@@ -1,6 +1,6 @@
 {% set name = "bgen" %}
-{% set version = "3.0.3" %}
-{% set sha256 = "1cf434f35aaee86d1093f1fd96caf07fa92c3b49a760175052af934d74e702a6" %}
+{% set version = "4.0.1" %}
+{% set sha256 = "42b92409652f1477244516251dca30ed749cef8384dfd7331bb840aff8c0eaf5" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and vc<14]
 
 requirements:
@@ -55,7 +55,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.md
-  summary: 'A BGEN file format reader'
+  summary: A BGEN file format reader
   doc_url: https://bgen.readthedocs.io
   dev_url: https://github.com/limix/bgen
 
