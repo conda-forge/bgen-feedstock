@@ -39,14 +39,15 @@ test:
     - conda inspect objects -p $PREFIX $PKG_NAME         # [osx]
     - if NOT exist %LIBRARY_LIB%/bgen.lib exit 1         # [win]
     - if NOT exist %LIBRARY_BIN%/bgen.dll exit 1         # [win]
-    - if NOT exist %LIBRARY_INC%/bgen.h exit 1           # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/bgen.h exit 1      # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/bstring.h exit 1   # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/export.h exit 1    # [win]
     - if NOT exist %LIBRARY_INC%/bgen/file.h exit 1      # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/depr.h exit 1      # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/str.h exit 1       # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/geno.h exit 1      # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/platform.h exit 1  # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/meta.h exit 1      # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/api.h exit 1       # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/genotype.h exit 1  # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/metafile.h exit 1  # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/partition.h exit 1 # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/samples.h exit 1   # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/variant.h exit 1   # [win]
 
 about:
   home: https://github.com/limix/bgen
