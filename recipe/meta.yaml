@@ -32,21 +32,21 @@ requirements:
 
 test:
   commands:
-    - test -e $PREFIX/lib/libbgen.so                     # [linux]
-    - test -e $PREFIX/lib/libbgen.dylib                  # [osx]
-    - conda inspect linkages -p $PREFIX $PKG_NAME        # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME         # [osx]
-    - if NOT exist %LIBRARY_LIB%/bgen.lib exit 1         # [win]
-    - if NOT exist %LIBRARY_BIN%/bgen.dll exit 1         # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/bgen.h exit 1      # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/bstring.h exit 1   # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/export.h exit 1    # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/file.h exit 1      # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/genotype.h exit 1  # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/metafile.h exit 1  # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/partition.h exit 1 # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/samples.h exit 1   # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/variant.h exit 1   # [win]
+    - test -e $PREFIX/lib/libbgen.so                      # [linux]
+    - test -e $PREFIX/lib/libbgen.dylib                   # [osx]
+    - conda inspect linkages -p $PREFIX $PKG_NAME         # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME          # [osx]
+    - if NOT exist %LIBRARY_LIB%/bgen.lib exit 1          # [win]
+    - if NOT exist %LIBRARY_BIN%/bgen.dll exit 1          # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/bgen.h exit 1       # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/bstring.h exit 1    # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/export.h exit 1     # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/file.h exit 1       # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/genotype.h exit 1   # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/metafile.h exit 1   # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/partition.h exit 1  # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/samples.h exit 1    # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/variant.h exit 1    # [win]
 
 about:
   home: https://github.com/limix/bgen
