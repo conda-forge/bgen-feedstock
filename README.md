@@ -5,11 +5,13 @@ Home: https://github.com/limix/bgen
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/bgen-feedstock/blob/master/LICENSE.txt)
 
 Summary: A BGEN file format reader
 
+Development: https://github.com/limix/bgen
 
+Documentation: https://bgen.readthedocs.io
 
 Current build status
 ====================
