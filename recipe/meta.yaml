@@ -1,6 +1,6 @@
 {% set name = "bgen" %}
-{% set version = "3.0.3" %}
-{% set sha256 = "1cf434f35aaee86d1093f1fd96caf07fa92c3b49a760175052af934d74e702a6" %}
+{% set version = "4.0.1" %}
+{% set sha256 = "42b92409652f1477244516251dca30ed749cef8384dfd7331bb840aff8c0eaf5" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and vc<14]
 
 requirements:
@@ -21,41 +21,39 @@ requirements:
     - cmake
     - ninja  # [win]
   host:
-    - almosthere >=1.0.3
+    - almosthere >=1.0.15
     - conda-build
     - zlib  # [win]
     - zstd
   run:
-    - almosthere >=1.0.3
+    - almosthere >=1.0.15
     - zlib  # [win]
     - zstd
 
 test:
   commands:
-    - test -e $PREFIX/lib/libbgen.so                     # [linux]
-    - test -e $PREFIX/lib/libbgen_static.a               # [unix]
-    - test -e $PREFIX/include/bgen.h                     # [unix]
-    - test -e $PREFIX/lib/libbgen.dylib                  # [osx]
-    - conda inspect linkages -p $PREFIX $PKG_NAME        # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME         # [osx]
-    - if NOT exist %LIBRARY_LIB%/bgen.lib exit 1         # [win]
-    - if NOT exist %LIBRARY_BIN%/bgen.dll exit 1         # [win]
-    - if NOT exist %LIBRARY_LIB%/bgen_static.lib exit 1  # [win]
-    - if NOT exist %LIBRARY_INC%/bgen.h exit 1           # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/file.h exit 1      # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/depr.h exit 1      # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/str.h exit 1       # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/geno.h exit 1      # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/platform.h exit 1  # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/meta.h exit 1      # [win]
-    - if NOT exist %LIBRARY_INC%/bgen/api.h exit 1       # [win]
+    - test -e $PREFIX/lib/libbgen.so                      # [linux]
+    - test -e $PREFIX/lib/libbgen.dylib                   # [osx]
+    - conda inspect linkages -p $PREFIX $PKG_NAME         # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME          # [osx]
+    - if NOT exist %LIBRARY_LIB%/bgen.lib exit 1          # [win]
+    - if NOT exist %LIBRARY_BIN%/bgen.dll exit 1          # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/bgen.h exit 1       # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/bstring.h exit 1    # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/export.h exit 1     # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/file.h exit 1       # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/genotype.h exit 1   # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/metafile.h exit 1   # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/partition.h exit 1  # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/samples.h exit 1    # [win]
+    - if NOT exist %LIBRARY_INC%/bgen/variant.h exit 1    # [win]
 
 about:
   home: https://github.com/limix/bgen
   license: MIT
   license_family: MIT
   license_file: LICENSE.md
-  summary: 'A BGEN file format reader'
+  summary: A BGEN file format reader
   doc_url: https://bgen.readthedocs.io
   dev_url: https://github.com/limix/bgen
 
