@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
 
 requirements:
@@ -34,8 +34,6 @@ test:
   commands:
     - test -e $PREFIX/lib/libbgen.so                      # [linux]
     - test -e $PREFIX/lib/libbgen.dylib                   # [osx]
-    - conda inspect linkages -p $PREFIX $PKG_NAME         # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME          # [osx]
     - if NOT exist %LIBRARY_LIB%/bgen.lib exit 1          # [win]
     - if NOT exist %LIBRARY_BIN%/bgen.dll exit 1          # [win]
     - if NOT exist %LIBRARY_INC%/bgen/bgen.h exit 1       # [win]
