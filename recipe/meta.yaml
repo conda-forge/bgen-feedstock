@@ -1,6 +1,6 @@
 {% set name = "bgen" %}
-{% set version = "4.1.0" %}
-{% set sha256 = "1975c3f971d65d95f48c659d82a9abd07e72fe7a04f2bd83060aca2dcefebcd0" %}
+{% set version = "4.1.1" %}
+{% set sha256 = "9a87f281e0f22aa9360103754b47548e8266564517181af96ed1956011a8ff5b" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,6 @@ source:
 
 build:
   number: 0
-  skip: true  # [win and vc<14]
 
 requirements:
   build:
@@ -21,12 +20,12 @@ requirements:
     - cmake
     - ninja  # [win]
   host:
-    - almosthere >=1.0.15
+    - almosthere >=2.0.2
     - conda-build
     - zlib  # [win]
     - zstd
   run:
-    - almosthere >=1.0.15
+    - almosthere >=2.0.2
     - zlib  # [win]
     - zstd
 
